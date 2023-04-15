@@ -1,7 +1,12 @@
 {
     "name": "AcademIQ",
     "action": {
-        "default_popup": "index.html"
+        "default_popup": "index.html",
+        "default_icon" : {
+        "16": "logo16.png",
+        "32": "logo32.png",
+        "128": "logo.png"
+     }
      },
     "manifest_version": 3,
     "version": "0.1",
