@@ -1,10 +1,8 @@
-function readAndParseWebpageContent() {
+function readWebpageContent() {
     // Read and parse the webpage content here.
     // For example, you can extract all headings from the webpage:
     const content = document.body.innerText;
-
-    // Send the parsed data to the background script or another part of the extension as needed.
-    chrome.runtime.sendMessage({ content: content });
+    console.log(content);
 }
 
-readAndParseWebpageContent();
+readWebpageContent();

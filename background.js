@@ -5,8 +5,3 @@ chrome.action.onClicked.addListener(async () => {
         files: ['content.js']
     });
 });
-
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    // Handle the message from the content script here
-    console.log('Received content:', message.content);
-});
