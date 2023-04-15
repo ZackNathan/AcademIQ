@@ -1,18 +1,13 @@
+// script embedded in the extension to inject 'innertext.js' into the web page
+
 function readWebpageContent() {
-    // Read and parse the webpage content here.
-    const content = document.body.innerText;
-
-    //console.log(content);
-
-    chrome.runtime.sendMessage(
-        {
-            content: content
-        },
-        function(response) {
-            console.log(response);
-            return true;
-        }
-    );
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        const activeTab = tabs[0];
+        chrome.scripting.executeScript({
+            target: { tabId: activeTab.id },
+            files: ["innertext.js"],
+        });
+    });
 }
 
 readWebpageContent();
