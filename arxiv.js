@@ -1,3 +1,5 @@
+// script to handle arxiv API requests and parsing
+
 function extractBetweenTags(xml, tagName) {
     // sorry, I know I'm not supposed to parse like this...
     const oneline = xml.replace(/(\r\n|\n|\r)/gm, "");
@@ -43,8 +45,8 @@ export async function queryArxivAPI(keyword, maxResults = 3) {
 
         const data = await response.text();
         const results = parseXmlData(data);
-
         return results;
+
     } catch (error) {
         console.error("Error fetching data from arXiv API:", error);
         return [];
