@@ -5,3 +5,12 @@ chrome.action.onClicked.addListener(async () => {
         files: ['content.js']
     });
 });
+
+chrome.runtime.onMessage.addListener(
+    function(message, sender, sendResponse) {
+        console.log(message.content);
+        sendResponse({
+            response: "response"
+        });
+    }
+);

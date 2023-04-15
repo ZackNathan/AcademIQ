@@ -1,8 +1,18 @@
 function readWebpageContent() {
     // Read and parse the webpage content here.
-    // For example, you can extract all headings from the webpage:
     const content = document.body.innerText;
-    console.log(content);
+
+    //console.log(content);
+
+    chrome.runtime.sendMessage(
+        {
+            content: content
+        },
+        function(response) {
+            console.log(response);
+            return true;
+        }
+    );
 }
 
 readWebpageContent();
