@@ -1,0 +1,11 @@
+{
+  "name": "AcademIQ",
+  "action": {},
+  "manifest_version": 3,
+  "version": "0.1",
+  "description": "Suggests relevant academic articles based on webpage content",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
