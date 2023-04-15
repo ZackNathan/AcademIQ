@@ -1,6 +1,8 @@
 {
     "name": "AcademIQ",
-    "action": {},
+    "action": {
+        "default_popup": "index.html"
+     },
     "manifest_version": 3,
     "version": "0.1",
     "description": "Suggests relevant academic articles based on webpage content",
