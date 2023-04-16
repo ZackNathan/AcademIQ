@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from keybert import KeyBERT
+import json
 
 
 app = Flask(__name__)
@@ -12,11 +13,14 @@ def hello_world():
 
 @app.route('/api/process',methods=['POST'])
 def predict():
-    data = request.json['data']
+    data = json.loads(request.data)['data']
     text = data['text']
+
     print("this is the article text")
     print("--------------------------")
     print(text)
+
+    text
 
     kw_model = KeyBERT()
     keywords = kw_model.extract_keywords(text)
@@ -24,4 +28,9 @@ def predict():
 
     # dic = {"search query": str(keywords)}
 
-    return jsonify(keywords)
+    glued = ""
+    for keyword in keywords:
+        glued += keyword[0]
+        glued += " "
+
+    return jsonify(glued[:-1])
