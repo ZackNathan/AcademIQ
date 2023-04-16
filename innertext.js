@@ -8,7 +8,7 @@ var cleaned = spaces.replace(/[^a-zA-Z ]+/g, " ");
 console.log("sending message to background");
 
 // send to the background script
-chrome.runtime.sendMessage("ldacpcajkcmpkjfemdmphofacmhjkebp", {
+chrome.runtime.sendMessage({
     type: "innertext",
     text: cleaned
 });
