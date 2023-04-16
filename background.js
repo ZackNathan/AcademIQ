@@ -8,7 +8,7 @@ chrome.runtime.onMessage.addListener(
         
         // messages received from innertext.js, contains cleaned page text
         if (message.type === "innertext") {
-
+            
             //Reformating text to work with the API
             const data = {data: {
                 text: message.text
