@@ -34,7 +34,8 @@ function parseXmlData(data) {
 }
 
 export async function queryArxivAPI(keyword, maxResults = 3) {
-    const formattedKeyword = keyword.split(" ").join("+");
+    const formattedKeyword = keyword.replace(/["']/g, '').split(" ").join("+OR+");
+    console.log(formattedKeyword);
     const apiUrl = `http://export.arxiv.org/api/query?search_query=all:${formattedKeyword}&start=0&max_results=${maxResults}`;
 
     try {
