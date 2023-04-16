@@ -18,11 +18,11 @@
 }
 
 a:hover {
-  color: grey;
+  text-decoration: underline;
 }
 
 a{
-  color: #071648;
+  color: #163085;
   text-decoration: none;
   font-family: artifakt-element, sans-serif;
   font-style: normal;

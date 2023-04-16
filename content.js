@@ -26,6 +26,12 @@ function displayPapers(papers) {
     for (const paper of papersArray) {
         papersHtml += `<a href="${paper.url}" target="_blank">`
 
+        //add the title
+        papersHtml += `<i>${paper.title}</i>. `;
+
+        //add the url
+        papersHtml += `</a>\n`;
+
         //go through the list of authors and add them to the string
         const authorsArray = Array.isArray(paper.authors) ? paper.authors : [paper.authors];
         i = 0;
@@ -34,20 +40,18 @@ function displayPapers(papers) {
             i++;
         }
         papersHtml += `${authorsArray[i]}. `;
-        //add the title
-        papersHtml += `<i>${paper.title}</i>. `;
         //add the date
-        papersHtml += `${paper.date}. `;
-        //add the url
-        papersHtml += `</a>`;
+        papersHtml += `(${paper.date.substring(0, 4)})`;
         //add a line break
-        papersHtml += `<br>`;
-        papersHtml += `<br>`;
+        papersHtml += `<br><br>`;
     }
 
     // Get a reference to the element in the popup where you want to display the papers
     const papersContainer = document.getElementById("papers-container");
     papersContainer.innerHTML = papersHtml;
+
+    const loadingIcon = document.getElementById("loading");
+    loadingIcon.style.display = "none";
 }
 
 chrome.runtime.onMessage.addListener(
