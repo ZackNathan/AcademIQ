@@ -2,13 +2,33 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+  font-family: artifakt-element, sans-serif;
+  font-style: normal;
+  font-weight: 300;
 }
+
 
 .centerDiv{
   display: block;
   width: 70vw;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2vh;
+  margin-top: 1vh;
   margin-bottom: 3vh;
+}
+
+a:hover {
+  color: grey;
+}
+
+a{
+  color: #071648;
+  text-decoration: none;
+  font-family: artifakt-element, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+}
+
+a:visited {
+  color: #7243F4
 }
